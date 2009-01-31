@@ -1,5 +1,20 @@
-<ul>
-<% @tags.each do |tag| %>
-  <li><a href="/user/<%= @user %>/tag/<%= tag %>"><%= tag %></a></li>
+<h2><a href="http://twitter.com/<%= @user %>"><%= @user %></a></h2>
+
+<% @tags.each do |tag, tweets| %>
+  <h3>#<%= tag %></h3>
+  
+  <% tweets.each do |tweet| %>
+    <div class="tweet">
+      <% if tweet.twitpic_url %>
+        <div class="image">
+          <a href="<%= tweet.twitpic_url %>" title="<%= tweet.text %>"><img src="<%= tweet.twitpic_thumbnail_url %>" width="150" height="150" alt="<%= tweet.text %>"></a>
+        </div>
+      <% end %>
+      <div class="body">
+        <%= tweet.text %><br>
+        <div class="date"><%= tweet.created_at %></div>
+      </div>
+    </div>
+  <% end %>
+  
 <% end %>
-</ul>

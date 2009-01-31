@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>hashtags</title>
+  <style>
+    * { margin: 0; padding: 0; }
+    body { font-size: 16px; font-family: Arial; background-color: #FFF; color: #1a1a1a; line-height: 26px; }
+    #c { width: 960px; margin: 10px; }
+    a img { border: none; }
+    a:link, a:visited, a:active { text-decoration: none; color: #2ba0bf; }
+    a:hover { text-decoration: underline; }
+    img { display: block; }
+    input { font-size: 16px; }
+    label { display: block;  font-size: 22px; }
+    h2 { margin: 20px 0 0 0; }
+    h3 { clear: left; float: left; margin: 40px 0 0px 0; }
+    #logo { position: absolute; top: 210px; right: 0px; font-size: 512px; color: #EEE; }
+    #name { position: absolute; top: 10px; right: 50px; z-index: 4; padding: 0px; border: 0px solid #39d5ff; }
+    #name .text { width: 150px; border:10px groove #39d5ff; background-color: #FFF; color: #1a1a1a; height: 25px; padding:0;  }
+    #name .submit { display: block; width: 100px; height: 45px; background-color: #1a1a1a; color: #FFF; font-size: 16px; border: 10px groove #FFF; }
+    .tweet { margin: 10px 0; clear: left; float: left;  }
+    .tweet .image { float: left; margin-right: 10px; }
+    .tweet .body { float: left; margin: 0px 0 0 0; font-size: 22px; width: 600px; }
+    .tweet .date { font-size: 16px; color: #666; }
+  </style>
+</head>
+<body>
+  <div id="logo">#</div>
+  <div id="c">
+    <div id="name">
+      <form action="/user/find" method="POST">
+        <input type="text" name="name" class="text">
+        <input type="submit" value="go get" class="submit">
+      </form>
+    </div>
+    <%= yield %>
+  </div>
+</body>
+</html>
