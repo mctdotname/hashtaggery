@@ -82,7 +82,7 @@ module Twitter
     end
 
     def clean_text
-      @text.gsub(/http:\/\/twitpic\.com\/\w+/,'')
+      @text.gsub(/http:\/\/twitpic\.com\/\w+(?:\s*[-:]+\s*)/,'')
     end
   end
 end
