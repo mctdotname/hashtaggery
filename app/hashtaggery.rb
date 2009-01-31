@@ -17,5 +17,8 @@ end
 
 get '/user/:user' do
   tweets = Twitter::User.timeline(params[:user])
-  tweets.map {|tweet| tweet['text']}.join('<br />')
+  @tags = Twitter.extract_tags(tweets)
+  @user = params[:user]
+
+  erb(:user)
 end

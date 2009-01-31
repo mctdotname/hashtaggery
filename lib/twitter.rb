@@ -31,4 +31,11 @@ module Twitter
     end
   end
 
+  class << self
+    def extract_tags(tweets)
+      tweets.inject([]) do |tags, tweet|
+        tags << tweet['text'].scan(/#(\S+)/)
+      end.flatten.uniq
+    end
+  end
 end
