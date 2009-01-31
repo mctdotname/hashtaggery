@@ -17,7 +17,7 @@ end
 
 get '/user/:user' do
   tweets = Twitter::User.timeline(params[:user])
-  @tags = Twitter.extract_tags(tweets)
+  @tags = Twitter.group_tweets_by_tag(tweets)
   @user = params[:user]
 
   erb(:user)

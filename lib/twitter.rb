@@ -37,5 +37,12 @@ module Twitter
         tags << tweet['text'].scan(/#(\S+)/)
       end.flatten.uniq
     end
+
+    def group_tweets_by_tag(tweets)
+      extract_tags(tweets).inject({}) do |hash, tag|
+        hash[tag] = tweets.select {|tweet| tweet['text'].match(tag)}
+        hash
+      end
+    end
   end
 end
