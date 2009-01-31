@@ -80,5 +80,9 @@ module Twitter
     def twitpic_thumbnail_url
       twitpic_url.sub('twitpic.com/','twitpic.com/show/thumb/') if twitpic_url
     end
+
+    def clean_text
+      @text.gsub(/http:\/\/twitpic\.com\/\w+/,'')
+    end
   end
 end
