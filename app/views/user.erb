@@ -7,11 +7,11 @@
     <div class="tweet">
       <% if tweet.twitpic_url %>
         <div class="image">
-          <a href="<%= tweet.twitpic_url %>" title="<%= tweet.text %>"><img src="<%= tweet.twitpic_thumbnail_url %>" width="150" height="150" alt="<%= tweet.text %>"></a>
+          <a href="<%= tweet.twitpic_url %>" title="<%= tweet.clean_text %>"><img src="<%= tweet.twitpic_thumbnail_url %>" width="150" height="150" alt="<%= tweet.clean_text %>"></a>
         </div>
       <% end %>
       <div class="body">
-        <%= tweet.text %><br>
+        <%= tweet.clean_text %><br>
         <div class="date"><%= tweet.created_at %></div>
       </div>
     </div>
