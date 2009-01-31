@@ -17,6 +17,5 @@ end
 
 get '/user/:user' do
   tweets = Twitter::User.timeline(params[:user])
-#   tweets['results'].map {|tweet| tweet['text']}.join('<br />')
-  tweets.inspect
+  tweets.map {|tweet| tweet['text']}.join('<br />')
 end
