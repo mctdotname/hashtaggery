@@ -73,7 +73,7 @@ module Twitter
 
     def twitpic_url
       if @text.match(/http:\/\/twitpic.com\/\w+/)
-        $0
+        $&
       end
     end
 
