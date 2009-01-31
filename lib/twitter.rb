@@ -26,7 +26,7 @@ module Twitter
 
     class << self
       def timeline(user)
-        get("/statuses/user_timeline/#{user}.json")
+        get("/statuses/user_timeline/#{user}.json?count=200")
       end
     end
   end
